@@ -1,6 +1,6 @@
 package com.lluis.dto;
 
-public class EnvioObservaciones {
+public class Observaciones {
 	private String fecha;
 	private String nose1;
 	private String estado;

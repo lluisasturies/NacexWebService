@@ -14,7 +14,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.lluis.dto.Expedicion;
+import com.lluis.utilidades.AgenciaJSONFormat;
 import com.lluis.utilidades.EnvioJSONFormat;
+import com.lluis.utilidades.EstadoExpedicionJSONFormat;
 
 import static java.util.stream.Collectors.joining;
 
@@ -103,7 +105,7 @@ public class NacexWebService {
 		Map<String, String> data = new HashMap<String, String>();
 		data.put("expe_codigo", codExp);
 		
-		return this.call("getEstadoExpedicion", data);
+		return new EstadoExpedicionJSONFormat().formatea(this.call("getEstadoExpedicion", data));
 	}
 	
 	/**
@@ -129,7 +131,7 @@ public class NacexWebService {
 		Map<String, String> data = new HashMap<String, String>();
 		data.put("cp", cp);
 		
-		return this.call("getAgencia", data);
+		return new AgenciaJSONFormat().formatea(this.call("getAgencia", data));
 	}
 	
 	/**

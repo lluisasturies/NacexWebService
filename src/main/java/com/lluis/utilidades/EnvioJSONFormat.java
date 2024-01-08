@@ -20,12 +20,12 @@ public class EnvioJSONFormat {
 			String[] datosObservacion = estados[i].split("~");
 			
 			observacion.setFecha(datosObservacion[0]);
-			observacion.setNose1(datosObservacion[1]);
+			observacion.setCodEstado(datosObservacion[1]);
 			observacion.setEstado(datosObservacion[2]);
 			observacion.setWeb(datosObservacion[3]);
-			observacion.setNose2(datosObservacion[4]);
-			observacion.setNose3(datosObservacion[5]);
-			observacion.setNose4(datosObservacion[6]);
+			observacion.setCod1(datosObservacion[4]);
+			observacion.setCod2(datosObservacion[5]);
+			observacion.setCod3(datosObservacion[6]);
 				
 			observaciones.add(observacion);
 		}

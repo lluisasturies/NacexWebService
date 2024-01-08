@@ -5,4 +5,12 @@
 	<artifactId>NacexWebService</artifactId>
 	<version>0.0.1</version>
 	<name>NacexWebService</name>
+	
+	<dependencies>
+		<dependency>
+    		<groupId>org.json</groupId>
+    		<artifactId>json</artifactId>
+    		<version>20230618</version>
+		</dependency>
+	</dependencies>
 </project>

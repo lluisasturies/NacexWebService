@@ -37,7 +37,7 @@ public class Envio {
 	private String telEntrega;
 	private String codDelEntrega;
 	private String telDelEntrega;
-	private List<Observaciones> observaciones;
+	private List<Observacion> observaciones;
 	private String aduana;
 	private String confOk15m;
 	private String ret;
@@ -249,10 +249,10 @@ public class Envio {
 	public void setTelDelEntrega(String telDelEntrega) {
 		this.telDelEntrega = telDelEntrega;
 	}
-	public List<Observaciones> getObservaciones() {
+	public List<Observacion> getObservaciones() {
 		return observaciones;
 	}
-	public void setObservaciones(List<Observaciones> observaciones) {
+	public void setObservaciones(List<Observacion> observaciones) {
 		this.observaciones = observaciones;
 	}
 	public String getAduana() {

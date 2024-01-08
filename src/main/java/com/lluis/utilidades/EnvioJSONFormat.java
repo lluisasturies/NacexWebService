@@ -5,17 +5,17 @@ import java.util.List;
 
 import org.json.JSONObject;
 
-import com.lluis.dto.Observaciones;
+import com.lluis.dto.Observacion;
 
 public class EnvioJSONFormat {
 	public String formatea(String data) {
 		
 		String[] resultado = data.split("\\|");
 		String[] estados = data.substring(data.indexOf("historico_estados")+18).split("\\|");
-		List<Observaciones> observaciones = new ArrayList<Observaciones>();
+		List<Observacion> observaciones = new ArrayList<Observacion>();
 		
 		for (int i = 0 ; i < estados.length; i++) {
-			Observaciones observacion = new Observaciones();
+			Observacion observacion = new Observacion();
 			
 			String[] datosObservacion = estados[i].split("~");
 			

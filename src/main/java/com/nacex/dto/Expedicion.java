@@ -1,4 +1,4 @@
-package com.lluis.dto;
+package com.nacex.dto;
 
 import java.util.List;
 

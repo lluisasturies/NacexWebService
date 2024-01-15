@@ -1,4 +1,4 @@
-package com.lluis.dto;
+package com.nacex.dto;
 
 public class EstadoExpedicion {
 	private String codExp;

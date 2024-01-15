@@ -1,11 +1,11 @@
-package com.lluis.utilidades;
+package com.nacex.utilidades;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONObject;
 
-import com.lluis.dto.Observacion;
+import com.nacex.dto.Observacion;
 
 public class EnvioJSONFormat {
 	public String formatea(String data) {

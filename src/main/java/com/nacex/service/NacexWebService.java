@@ -16,6 +16,7 @@ import java.util.Map;
 import com.nacex.dto.Expedicion;
 import com.nacex.utilidades.AgenciaJSONFormat;
 import com.nacex.utilidades.EnvioJSONFormat;
+import com.nacex.utilidades.ErrorJSONFormat;
 import com.nacex.utilidades.EstadoExpedicionJSONFormat;
 
 import static java.util.stream.Collectors.joining;
@@ -76,7 +77,13 @@ public class NacexWebService {
 		data.put("codigo", codExp);
 		data.put("tipo", tipo);
 
-		return new EnvioJSONFormat().formatea(this.call("getInfoEnvio", data));
+		try {
+			return new EnvioJSONFormat().formatea(this.call("getInfoEnvio", data));
+			
+		} catch (Exception e) {
+			return new ErrorJSONFormat().formatea(this.call("getInfoEnvio", data));
+			
+		}
 	}
 	
 	/**
@@ -92,8 +99,15 @@ public class NacexWebService {
 		data.put("del", aux[0]);
 		data.put("num", aux[1]);
 		data.put("tipo", tipo);
+	
 		
-		return new EnvioJSONFormat().formatea(this.call("getInfoEnvio", data));
+		try {
+			return new EnvioJSONFormat().formatea(this.call("getInfoEnvio", data));
+			
+		} catch (Exception e) {
+			return new ErrorJSONFormat().formatea(this.call("getInfoEnvio", data));
+			
+		}
 	}
 	
 	/**
@@ -105,7 +119,30 @@ public class NacexWebService {
 		Map<String, String> data = new HashMap<String, String>();
 		data.put("expe_codigo", codExp);
 		
-		return new EstadoExpedicionJSONFormat().formatea(this.call("getEstadoExpedicion", data));
+		try {
+			return new EstadoExpedicionJSONFormat().formatea(this.call("getEstadoExpedicion", data));
+			
+		} catch (Exception e) {
+			return new ErrorJSONFormat().formatea(this.call("getEstadoExpedicion", data));
+			
+		}
+	}
+	
+	public String getEstadoExpedicionPorAlbaran(String albaran) {
+		String[] aux = albaran.split("/");
+		
+		Map<String, String> data = new HashMap<String, String>();
+		data.put("origen", aux[0]);
+		data.put("albaran", aux[1]);
+		
+		try {
+			return new EstadoExpedicionJSONFormat().formatea(this.call("getEstadoExpedicion", data));
+			
+		} catch (Exception e) {
+			return new ErrorJSONFormat().formatea(this.call("getEstadoExpedicion", data));
+			
+		}
+		
 	}
 	
 	/**
@@ -131,7 +168,13 @@ public class NacexWebService {
 		Map<String, String> data = new HashMap<String, String>();
 		data.put("cp", cp);
 		
-		return new AgenciaJSONFormat().formatea(this.call("getAgencia", data));
+		try {
+			return new AgenciaJSONFormat().formatea(this.call("getAgencia", data));
+			
+		} catch (Exception e) {
+			return new ErrorJSONFormat().formatea(this.call("getAgencia", data));
+			
+		}
 	}
 	
 	/**
